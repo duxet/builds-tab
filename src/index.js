@@ -1,7 +1,7 @@
-var adapters = [], buildList
-
-let $repoNav = $('.js-repo-nav')
-let repoName = getRepoName()
+let adapters = [
+  new Travis()
+]
+let buildList, repoName
 
 function addBuildsTab(status) {
   if ($('.reponav-builds').length) {
@@ -19,21 +19,19 @@ function addBuildsTab(status) {
     </a>
   `
 
-  $repoNav.append($buildsTab)
+  $('.js-repo-nav').append($buildsTab)
 }
 
 function getRepoName() {
   return window.location.pathname.split('/').slice(1, 3).join('/')
 }
 
-function loadBuilds() {
-  let adapter = this.adapters[0]
-
+function loadBuilds(adapter) {
   $('.repository-content').html('<build-list />')
   buildList = riot.mount('build-list', { builds: [] })[0]
 
-  $('.reponav-item', $repoNav[0]).removeClass('selected')
-  $('.reponav-builds', $repoNav[0]).addClass('selected')
+  $('.reponav-item').removeClass('selected')
+  $('.reponav-builds').addClass('selected')
 
   adapter.getBuilds(repoName).then((builds) => {
     buildList.builds = builds
@@ -41,30 +39,22 @@ function loadBuilds() {
   })
 }
 
-$(() => {
-  this.adapters.push(new Travis())
-
-  if (!$('.repohead-details-container')) {
+gitHubInjection(window, (err) => {
+  if (!$('.repohead-details-container').length) {
     return
   }
 
-  let adapter = this.adapters[0]
-  let status = null
+  repoName = getRepoName()
+  let adapter = adapters[0]
 
   adapter.getStatus(repoName).then((status) => {
-    gitHubInjection(window, function (err) {
-      if (err) {
-        return console.error(err)
-      }
+    addBuildsTab(status)
+  })
 
-      addBuildsTab(status)
-    })
+  $('body').on('click', '.reponav-builds', (event) => {
+    event.preventDefault()
 
-    $('body').on('click', '.reponav-builds', (event) => {
-      event.preventDefault()
-
-      history.pushState({}, '', `/${repoName}/builds`)
-      loadBuilds()
-    })
+    history.pushState({}, '', `/${repoName}/builds`)
+    loadBuilds(adapter)
   })
 })
