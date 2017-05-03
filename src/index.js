@@ -16,6 +16,8 @@ function addBuildsTab(status) {
       </svg>
 
       Builds
+
+      <span class="Counter">${ status.number }</span>
     </a>
   `
 
@@ -48,6 +50,10 @@ gitHubInjection(window, (err) => {
   let adapter = adapters[0]
 
   adapter.getStatus(repoName).then((status) => {
+    if (!status.number) {
+      return
+    }
+
     addBuildsTab(status)
   })
 
