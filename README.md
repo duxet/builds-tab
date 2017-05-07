@@ -1,5 +1,8 @@
 # Builds Tab for Github
-This extension will add "builds" tab to your browser.
+This extension will add "builds" tab to Github in your browser.
+
+## Download
+- [Firefox version](https://addons.mozilla.org/en-US/firefox/addon/builds-tab-for-github/)
 
 ## Features
 - [x] New "builds" tab on repo page, with list of latest builds
