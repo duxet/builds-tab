@@ -1,4 +1,4 @@
-class Build {
+export default class Build {
   constructor(params) {
     Object.assign(this, params)
   }

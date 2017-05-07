@@ -9,16 +9,11 @@
                 "*://github.com/*"
             ],
             "js": [
-                "vendor/axios.min.js",
-                "vendor/cash.min.js",
-                "vendor/gh-injection.js",
-                "vendor/moment.min.js",
-                "vendor/riot.csp.js",
-                "dist/components.js",
-                "src/adapters/travis.js",
-                "src/build.js",
-                "src/index.js"
+                "dist/index.js"
             ]
         }
+    ],
+    "permissions": [
+         "https://api.travis-ci.org/*"
     ]
 }

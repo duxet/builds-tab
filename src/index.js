@@ -1,3 +1,9 @@
+import $ from 'cash-dom'
+import gitHubInjection from 'github-injection'
+import riot from 'riot'
+
+import Travis from './adapters/Travis'
+
 let adapters = [
   new Travis()
 ]

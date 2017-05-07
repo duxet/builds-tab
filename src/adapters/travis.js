@@ -1,4 +1,8 @@
-class Travis {
+import axios from 'axios'
+
+import Build from '../build'
+
+export default class Travis {
   constructor() {
     this.client = axios.create({
       baseURL: 'https://api.travis-ci.org',
