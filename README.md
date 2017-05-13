@@ -1,4 +1,4 @@
-# Builds Tab for Github
+# <img src="assets/icon48.png" width="48" align="left"> Builds Tab for Github
 This extension will add "builds" tab to Github in your browser.
 
 ## Download
