@@ -7,6 +7,7 @@ This extension will add "builds" tab to Github in your browser.
 ## Download
 - [Chrome version](https://chrome.google.com/webstore/detail/builds-tab-for-github/jnmdkbflmkjehkkdbjdfpmhgdafpcdkh)
 - [Firefox version](https://addons.mozilla.org/en-US/firefox/addon/builds-tab-for-github/)
+- [Opera version](https://addons.opera.com/en/extensions/details/builds-tab-for-github/)
 
 ## Screenshot
 ![screenshot](https://lh3.googleusercontent.com/nP0vpqH2hSYFtvzpDW3BZzs2B4ngHAq00pdGH-n2OIr0CrBIxgK0laVEP5uKHeLZIhcncz7aKw=s640-h400-e365)
