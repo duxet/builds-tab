@@ -1,4 +1,7 @@
 # <img src="assets/icon48.png" width="48" align="left"> Builds Tab for Github
+
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/d/jnmdkbflmkjehkkdbjdfpmhgdafpcdkh.svg)](https://chrome.google.com/webstore/detail/builds-tab-for-github/jnmdkbflmkjehkkdbjdfpmhgdafpcdkh) [![Mozilla Add-on](https://img.shields.io/amo/d/builds-tab-for-github.svg)](https://addons.mozilla.org/en-US/firefox/addon/builds-tab-for-github/)
+
 This extension will add "builds" tab to Github in your browser.
 
 ## Download
