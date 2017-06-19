@@ -2,12 +2,10 @@ import $ from 'cash-dom'
 import gitHubInjection from 'github-injection'
 import riot from 'riot'
 
-import Travis from './adapters/travis'
+import AdapterProxy from './AdapterProxy'
 
-let adapters = [
-  new Travis()
-]
 let buildList, repoName
+let adapter = new AdapterProxy()
 
 function addBuildsTab(status) {
   if ($('.reponav-builds').length) {
@@ -47,13 +45,12 @@ function loadBuilds(adapter) {
   })
 }
 
-gitHubInjection(window, (err) => {
+gitHubInjection(() => {
   if (!$('.repohead-details-container').length) {
     return
   }
 
   repoName = getRepoName()
-  let adapter = adapters[0]
 
   adapter.getStatus(repoName).then((status) => {
     if (!status.number) {
