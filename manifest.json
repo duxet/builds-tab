@@ -6,29 +6,35 @@
     "version": "0.2.1",
     "author": "duxet",
     "developer": {
-        "name": "duxet",
-        "url": "https://github.com/duxet/builds-tab"
+      "name": "duxet",
+      "url": "https://github.com/duxet/builds-tab"
     },
     "homepage_url": "https://github.com/duxet/builds-tab",
     "icons": {
-        "48": "assets/icon48.png",
-        "96": "assets/icon96.png"
+      "48": "assets/icon48.png",
+      "96": "assets/icon96.png"
     },
     "content_scripts": [
-        {
-            "matches": [
-                "*://github.com/*"
-            ],
-            "js": [
-                "dist/index.js"
-            ]
-        }
+      {
+        "matches": [
+          "*://github.com/*"
+        ],
+        "js": [
+          "dist/github.js"
+        ]
+      }
     ],
     "permissions": [
-         "https://api.travis-ci.org/*",
-         "https://circleci.com/api/v1.1/*"
+      "storage",
+      "https://api.travis-ci.org/*",
+      "https://circleci.com/api/v1.1/*"
     ],
     "web_accessible_resources": [
       "assets/*"
-    ]
+    ],
+    "options_ui": {
+      "page": "assets/options.html",
+      "chrome_style": true,
+      "browser_style": true
+    }
 }
