@@ -2,7 +2,7 @@ import $ from 'cash-dom'
 import gitHubInjection from 'github-injection'
 import riot from 'riot'
 
-import Travis from './adapters/Travis'
+import Travis from './adapters/travis'
 
 let adapters = [
   new Travis()
