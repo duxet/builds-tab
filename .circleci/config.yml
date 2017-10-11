@@ -24,9 +24,14 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: npm run build
-      - run: rm -R node_modules package-lock.json
+
       - run: mkdir ~/artifacts
-      - run: zip -r ~/artifacts/builds-tab-$(node -e "console.log(require('./package.json').version)").zip .
+
+      - run: rm -R node_modules
+      - run: zip -r ~/artifacts/builds-tab-$(node -e "console.log(require('./manifest.json').version)")-src.zip .
+
+      - run: rm -Rf .??* src package*.json webpack.config.js
+      - run: zip -r ~/artifacts/builds-tab-$(node -e "console.log(require('./manifest.json').version)").zip .
 
       - store_artifacts:
           path: ~/artifacts/
