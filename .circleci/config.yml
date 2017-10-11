@@ -24,8 +24,10 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: npm run build
-      - run: rm -R ~/repo/node_modules ~/repo/package-lock.json
-      - run: zip -r ~/builds-tab.zip ~/repo
+      - run: rm -R node_modules package-lock.json
+      - run: mkdir ~/artifacts
+      - run: zip -r ~/artifacts/builds-tab-$(node -e "console.log(require('./package.json').version)").zip .
 
       - store_artifacts:
-          path: ~/builds-tab.zip
+          path: ~/artifacts/
+          destination: builds-tab
