@@ -1,16 +1,25 @@
 const { resolve } = require('path')
 
 module.exports = {
-  entry: [
-    './components/build-list',
-    './components/build',
-    './index'
-  ],
+  entry: {
+    github: [
+      './components/build-list',
+      './components/build',
+      './index'
+    ],
+    options: [
+      './options/options',
+      './options/index'
+    ]
+  },
   output: {
-    filename: 'index.js',
+    filename: '[name].js',
     path: resolve(__dirname, 'dist')
   },
   resolve: {
+    alias: {
+      riot: 'riot/riot.csp.js'
+    },
     extensions: ['.js', '.tag']
   },
   context: resolve(__dirname, 'src'),
