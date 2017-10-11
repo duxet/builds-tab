@@ -30,13 +30,17 @@ export default class AdapterProxy {
       let promises = this.adapters.map(adapter => adapter.getBuilds(repo))
 
       Promise.all(promises).then((values) => {
+        let builds = []
+
         for (let value of values) {
-          if (value.length) {
-            resolve(value)
-          }
+          builds = builds.concat(value)
         }
 
-        reject()
+        builds.sort((a, b) => {
+          return b.status.updatedAt - a.status.updatedAt
+        })
+
+        resolve(builds)
       })
     })
   }

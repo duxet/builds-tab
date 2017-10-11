@@ -6,7 +6,7 @@
             <path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"></path>
           </svg>
 
-          <svg if={ !isSuccessful } class="octicon octicon-x text-red" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+          <svg if={ isFailed } class="octicon octicon-x text-red" height="16" version="1.1" viewBox="0 0 16 16" width="16">
             <path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"></path>
           </svg>
         </span>
@@ -29,6 +29,7 @@
 
   <script>
     this.isSuccessful = opts.build.isSuccessful
+    this.isFailed = opts.build.isFailed
     this.statusName = opts.build.status.name
     this.url = opts.build.url
   </script>
