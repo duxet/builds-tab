@@ -36,6 +36,16 @@ export default class Travis {
           let build = response.data.builds[i]
           let commit = response.data.commits[i]
 
+          let updatedAt = moment(commit.committed_at)
+
+          if (build.started_at) {
+            updatedAt = moment(build.started_at)
+          }
+
+          if (build.finished_at) {
+            updatedAt = moment(build.finished_at)
+          }
+
           builds.push(new Build({
             id: build.id,
             commit: {
@@ -46,7 +56,7 @@ export default class Travis {
             number: build.number,
             status: {
               name: build.state,
-              updatedAt: moment()
+              updatedAt: updatedAt
             },
             url: `https://travis-ci.org/${ repo }/builds/${ build.id }`
           }))

@@ -1,6 +1,6 @@
 <build-list>
   <div class="Subhead">
-    <h2 class="Subhead-heading">Travis Builds</h2>
+    <h2 class="Subhead-heading">CI Builds</h2>
     <div class="Subhead-actions">
       <a href="https://travis-ci.org/" class="btn right">Go to Travis</a>
     </div>

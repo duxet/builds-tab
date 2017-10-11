@@ -36,6 +36,16 @@ export default class CircleCI {
         for (let build of response.data) {
           let commit = build.all_commit_details[0]
 
+          let updatedAt = moment(build.author_date)
+
+          if (build.start_time) {
+            updatedAt = moment(build.start_time)
+          }
+
+          if (build.stop_time) {
+            updatedAt = moment(build.stop_time)
+          }
+
           builds.push(new Build({
             id: build.build_num,
             commit: {
@@ -46,7 +56,7 @@ export default class CircleCI {
             number: build.build_num,
             status: {
               name: build.status,
-              updatedAt: moment()
+              updatedAt: updatedAt
             },
             url: `https://circleci.com/gh/${ repo }/${ build.build_num }`
           }))

@@ -4,6 +4,6 @@ export default class Build {
   }
 
   get isSuccessful() {
-    return this.status.name === 'passed'
+    return ['passed', 'fixed'].includes(this.status.name)
   }
 }

@@ -19,7 +19,10 @@
 
         <div class="mt-1 text-small text-gray">
           #{ build.number } { statusName } on { build.commit.branch }
-          <relative-time datetime="2016-03-10T00:26:27Z" title="10 mar 2016, 01:26 CET">on 10 Mar 2016</relative-time>
+          <relative-time
+            datetime="{ build.status.updatedAt.format() }"
+            title="{ build.status.updatedAt.format('LLL') }">
+          </relative-time>
         </div>
       </div>
     </div>
