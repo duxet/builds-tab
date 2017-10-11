@@ -18,7 +18,7 @@
         </a>
 
         <div class="mt-1 text-small text-gray">
-          <img src={ getIcon(build) } width="12" height="12" class="adapter-icon" />
+          <img src={ iconUrl } width="12" height="12" class="adapter-icon" />
 
           #{ build.number } { statusName } on { build.commit.branch }
 
@@ -36,10 +36,8 @@
     this.statusName = opts.build.status.name
     this.url = opts.build.url
 
-    getIcon (build) {
-      let fileName = build.adapter.name.toLowerCase()
-      return chrome.runtime.getURL(`assets/adapters/${ fileName }.svg`)
-    }
+    let fileName = opts.build.adapter.name.toLowerCase()
+    this.iconUrl = chrome.runtime.getURL(`assets/adapters/${ fileName }.svg`)
   </script>
 
   <style>
