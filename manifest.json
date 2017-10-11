@@ -3,7 +3,7 @@
     "short_name": "Builds Tab",
     "name": "Builds Tab for Github",
     "description": "Adds a builds tab to Github repos.",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "author": "duxet",
     "developer": {
         "name": "duxet",
@@ -25,7 +25,8 @@
         }
     ],
     "permissions": [
-         "https://api.travis-ci.org/*"
+         "https://api.travis-ci.org/*",
+         "https://circleci.com/api/v1.1/*"
     ],
     "web_accessible_resources": [
       "assets/*"
