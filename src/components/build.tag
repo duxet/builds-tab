@@ -18,7 +18,11 @@
         </a>
 
         <div class="mt-1 text-small text-gray">
+          <img width="12" height="12" class="adapter-icon"
+            src={ browserRuntime.getURL('assets/adapters/' + build.adapter.name + '.svg') } />
+
           #{ build.number } { statusName } on { build.commit.branch }
+
           <relative-time
             datetime="{ build.status.updatedAt.format() }"
             title="{ build.status.updatedAt.format('LLL') }">
@@ -32,5 +36,15 @@
     this.isFailed = opts.build.isFailed
     this.statusName = opts.build.status.name
     this.url = opts.build.url
+
+    this.browserRuntime = chrome.runtime
   </script>
+
+  <style>
+    .adapter-icon {
+      opacity: 0.5;
+      margin-bottom: -1px;
+      margin-right: 3px;
+    }
+  </style>
 </build>

@@ -58,6 +58,9 @@ export default class CircleCI {
               name: build.status,
               updatedAt: updatedAt
             },
+            adapter: {
+              name: 'CircleCI'
+            },
             url: `https://circleci.com/gh/${ repo }/${ build.build_num }`
           }))
         }

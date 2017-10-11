@@ -58,6 +58,9 @@ export default class Travis {
               name: build.state,
               updatedAt: updatedAt
             },
+            adapter: {
+              name: 'Travis'
+            },
             url: `https://travis-ci.org/${ repo }/builds/${ build.id }`
           }))
         }

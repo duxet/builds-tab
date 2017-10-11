@@ -26,5 +26,8 @@
     ],
     "permissions": [
          "https://api.travis-ci.org/*"
+    ],
+    "web_accessible_resources": [
+      "assets/*"
     ]
 }
