@@ -18,7 +18,7 @@
 
     saveOptions(event) {
       let fieldName = event.target.getAttribute('ref')
-      let fieldValue = event.target.value
+      let fieldValue = event.target.value.trim()
 
       this.options[fieldName] = fieldValue
 

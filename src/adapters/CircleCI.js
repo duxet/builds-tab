@@ -36,6 +36,10 @@ export default class CircleCI {
         for (let build of response.data) {
           let commit = build.all_commit_details[0]
 
+          if (!commit) {
+            continue;
+          }
+
           let updatedAt = moment(build.author_date)
 
           if (build.start_time) {

@@ -27,6 +27,7 @@
     "permissions": [
       "storage",
       "https://api.travis-ci.org/*",
+      "https://api.travis-ci.com/*",
       "https://circleci.com/api/v1.1/*"
     ],
     "web_accessible_resources": [

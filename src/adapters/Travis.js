@@ -4,12 +4,20 @@ import moment from 'moment'
 import Build from '../models/Build'
 
 export default class Travis {
-  constructor() {
+  constructor(token = null) {
+    this.domain = 'travis-ci.org'
+    let headers = {
+      'Accept': 'application/vnd.travis-ci.2+json'
+    }
+
+    if (token) {
+      this.domain = 'travis-ci.com'
+      headers['Authorization'] = `token ${ token }`
+    }
+
     this.client = axios.create({
-      baseURL: 'https://api.travis-ci.org',
-      headers: {
-        'Accept': 'application/vnd.travis-ci.2+json'
-      }
+      baseURL: `https://api.${ this.domain }`,
+      headers: headers
     })
   }
 
@@ -19,7 +27,7 @@ export default class Travis {
         resolve({
           status: response.data.repo.last_build_state,
           number: response.data.repo.last_build_number,
-          url: `https://travis-ci.org/${ repo }`
+          url: `https://${ this.domain }/${ repo }`
         })
       }).catch((error) => {
         reject(error)
@@ -61,7 +69,7 @@ export default class Travis {
             adapter: {
               name: 'Travis'
             },
-            url: `https://travis-ci.org/${ repo }/builds/${ build.id }`
+            url: `https://${ this.domain }/${ repo }/builds/${ build.id }`
           }))
         }
 

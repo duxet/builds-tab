@@ -7,33 +7,37 @@ export default class AdapterProxy {
       new Travis(),
       new CircleCI()
     ]
+
+    chrome.storage.sync.get('options', (options) => {
+      if (options && options.options && options.options.travisToken) {
+        this.adapters.push(new Travis(options.options.travisToken))
+      }
+    })
   }
 
   getStatus(repo) {
     return new Promise((resolve, reject) => {
       let promises = this.adapters.map(adapter => adapter.getStatus(repo))
 
-      Promise.all(promises).then((values) => {
-        for (let value of values) {
-          if (value.number) {
-            resolve(value)
-          }
-        }
-
-        reject()
-      })
+      for (let promise of promises) {
+        promise.then(value => resolve(value), e => e)
+      }
     })
   }
 
   getBuilds(repo) {
     return new Promise((resolve, reject) => {
-      let promises = this.adapters.map(adapter => adapter.getBuilds(repo))
+      let promises = this.adapters.map(adapter =>adapter.getBuilds(repo))
+
+      promises = promises.map(promise => promise.catch(e => e))
 
       Promise.all(promises).then((values) => {
         let builds = []
 
         for (let value of values) {
-          builds = builds.concat(value)
+          if (value instanceof Array) {
+            builds = builds.concat(value)
+          }
         }
 
         builds.sort((a, b) => {
