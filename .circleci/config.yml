@@ -24,7 +24,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: npm run build
-      - run: rm -R ~/repo/node_modules
+      - run: rm -R ~/repo/node_modules ~/repo/package-lock.json
       - run: zip -r ~/builds-tab.zip ~/repo
 
       - store_artifacts:
