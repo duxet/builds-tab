@@ -20,6 +20,7 @@ This extension will add "builds" tab to Github in your browser.
 ## Supported services
 - [x] [Travis-CI.org](https://travis-ci.org/)
 - [ ] [Travis-CI.com](https://travis-ci.com/)
+- [x] [CircleCI.com](https://circleci.com/)
 - [ ] More coming soon - waiting for your ideas!
 
 ## How to build?

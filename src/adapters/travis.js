@@ -1,7 +1,7 @@
 import axios from 'axios'
 import moment from 'moment'
 
-import Build from '../build'
+import Build from '../models/Build'
 
 export default class Travis {
   constructor() {
