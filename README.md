@@ -14,14 +14,14 @@ This extension will add "builds" tab to Github in your browser.
 
 ## Features
 - [x] New "builds" tab on repo page, with list of latest builds
-- [ ] Settings page
-- [ ] Optimizations, like caching data from CI services
+- [X] ~~*Settings page*~~ [2023-01-30]
+- [X] ~~*Optimizations, like caching data from CI services*~~ [2023-01-30]
 
 ## Supported services
 - [x] [Travis-CI.org](https://travis-ci.org/)
-- [ ] [Travis-CI.com](https://travis-ci.com/)
+- [X] ~~*[Travis-CI.com](https://travis-ci.com/)*~~ [2023-01-30]
 - [x] [CircleCI.com](https://circleci.com/)
-- [ ] More coming soon - waiting for your ideas!
+- [X] ~~*More coming soon - waiting for your ideas!*~~ [2023-01-30]
 
 ## How to build?
 - yarn install
