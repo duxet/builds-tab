@@ -4,6 +4,50 @@
     // Weitere Informationen finden Sie unter https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        {
+            "name": "Arm Debug",
+            "type": "arm-debug",
+            "request": "attach",
+            "address": "Websocket (ws://<host>:<port>) or socket (<host>:<port>) to connect to"
+        },
+        {
+            "name": "Embedded Debug",
+            "type": "embedded-debug",
+            "request": "launch",
+            "serialNumber": "<serial number of your device>",
+            "program": "${command:embedded-debug.getApplicationFile}",
+            "cmsisPack": "<path or URL of CMSIS Pack for your device>",
+            "debugFrom": "main"
+        },
+        {
+            "name": "Launch Extension",
+            "type": "extensionHost",
+            "request": "launch",
+            "args": [
+                "--extensionDevelopmentPath=${workspaceFolder}"
+            ]
+        }
+       {
+        "name": "Launch Extension",
+        "type": "extensionHost",
+        "request": "launch",
+        "args": [
+            "--extensionDevelopmentPath=${workspaceFolder}"
+        ]
+    }
+        {
+            "type": "clarinet",
+            "request": "launch",
+            "name": "Call .foo.bar",
+            "manifest": "/Clarinet.toml",
+            "expression": "(contract-call? .foo bar 42)"
+        },
+        {
+            "type": "bmx",
+            "name": "Default BlitzMax debug",
+            "request": "launch",
+            "source": ""
+        },
         
         {
             "type": "bmx",
