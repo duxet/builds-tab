@@ -1,0 +1,12 @@
+{
+    "gitlens.autolinks": [
+    {
+        "name": "Launch Extension",
+        "type": "extensionHost",
+        "request": "launch",
+        "args": [
+            "--extensionDevelopmentPath=${workspaceFolder}"
+        ]
+    }
+    ]
+}
