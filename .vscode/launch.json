@@ -1,0 +1,45 @@
+{
+    // Verwendet IntelliSense zum Ermitteln möglicher Attribute.
+    // Zeigen Sie auf vorhandene Attribute, um die zugehörigen Beschreibungen anzuzeigen.
+    // Weitere Informationen finden Sie unter https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "type": "bmx",
+            "name": "Default BlitzMax debug",
+            "request": "launch",
+            "source": ""
+        },
+       {
+        "name": "Launch Extension",
+        "type": "extensionHost",
+        "request": "launch",
+        "args": [
+            "--extensionDevelopmentPath=${workspaceFolder}"
+        ]
+    }
+        {
+            "name": "Launch Extension",
+            "type": "extensionHost",
+            "request": "launch",
+            "args": [
+                "--extensionDevelopmentPath=${workspaceFolder}"
+            ]
+        }
+        {
+            "type": "clarinet",
+            "request": "launch",
+            "name": "Call .foo.bar",
+            "manifest": "/Clarinet.toml",
+            "expression": "(contract-call? .foo bar 42)"
+        },
+        {
+            "type": "clarinet",
+            "request": "launch",
+            "name": "Call .foo.bar",
+            "manifest": "${workspaceFolder}/Clarinet.toml",
+            "expression": "(contract-call? .foo bar 42)"
+        }
+    ]
+}
