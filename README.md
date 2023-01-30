@@ -5,6 +5,7 @@
 This extension will add "builds" tab to Github in your browser.
 
 ## Download
+
 - [Chrome version](https://chrome.google.com/webstore/detail/builds-tab-for-github/jnmdkbflmkjehkkdbjdfpmhgdafpcdkh)
 - [Firefox version](https://addons.mozilla.org/en-US/firefox/addon/builds-tab-for-github/)
 - [Opera version](https://addons.opera.com/en/extensions/details/builds-tab-for-github/)
@@ -14,14 +15,14 @@ This extension will add "builds" tab to Github in your browser.
 
 ## Features
 - [x] New "builds" tab on repo page, with list of latest builds
-- [X] ~~*Settings page*~~ [2023-01-30]
-- [X] ~~*Optimizations, like caching data from CI services*~~ [2023-01-30]
+- [ ] Settings page
+- [ ] Optimizations, like caching data from CI services
 
 ## Supported services
 - [x] [Travis-CI.org](https://travis-ci.org/)
-- [X] ~~*[Travis-CI.com](https://travis-ci.com/)*~~ [2023-01-30]
+- [ ] [Travis-CI.com](https://travis-ci.com/)
 - [x] [CircleCI.com](https://circleci.com/)
-- [X] ~~*More coming soon - waiting for your ideas!*~~ [2023-01-30]
+- [ ] More coming soon - waiting for your ideas!
 
 ## How to build?
 - yarn install
